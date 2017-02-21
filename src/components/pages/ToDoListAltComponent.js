@@ -1,8 +1,11 @@
 'use strict';
 
 import React from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
+import {Grid, Row, Col, Button} from 'react-bootstrap';
 import ToDoTasksStore from './../../stores/ToDoTasksStore';
+import ToDoTasksActions from './../../actions/ToDoTasksActions';
+
+import ListAlt from './../toDo/ListAltComponent';
 
 require('styles/pages/ToDoListAlt.css');
 
@@ -24,7 +27,7 @@ class ToDoListAltComponent extends React.Component {
   }
 
   /* Handlers */
-  onToDoTasksStoreChange(state) {
+  onToDoTasksStoreChange = (state) => {
     this.setState(state);
   }
 
@@ -34,7 +37,12 @@ class ToDoListAltComponent extends React.Component {
         <Grid>
           <Row>
             <Col xs={12}>
-              Altjs ToDoList!!!
+              <h1>Altjs ToDoList!!!</h1>
+              <h2>There are {this.state.tasks.length} in array!</h2>
+              <Button onClick={ToDoTasksActions.getToDoTasks}>Load Tasks</Button>
+
+              <ListAlt toDoTasks={this.state.tasks} />
+
             </Col>
           </Row>
         </Grid>
