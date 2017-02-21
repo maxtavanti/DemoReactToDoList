@@ -6,6 +6,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './components/Main';
 import HomePage from './components/pages/HomeComponent';
 import ToDoListPage from './components/pages/ToDoListComponent';
+import ToDoListAltPage from './components/pages/ToDoListAltComponent';
 
 // Render the main component into the dom
 // ReactDOM.render(<App />, document.getElementById('app'));
@@ -16,6 +17,7 @@ ReactDOM.render((
       <IndexRoute component={HomePage} />
       <Route path="home" component={HomePage} />
       <Route path="to_do_list" component={ToDoListPage} />
+      <Route path="to_do_list_alt" component={ToDoListAltPage} />
       {/*
       <Route path="about" component={About}/>
       <Route path="users" component={Users}>
