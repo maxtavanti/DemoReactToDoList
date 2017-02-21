@@ -44,7 +44,7 @@ ListAltComponent.displayName = 'ToDoListAltComponent';
 
 // Uncomment properties you need
 ListAltComponent.propTypes = {
-  toDoTasks: React.PropTypes.array.isRequired
+  toDoTasks: React.PropTypes.array
 };
 // ListAltComponent.defaultProps = {};
 

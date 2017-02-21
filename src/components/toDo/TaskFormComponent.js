@@ -53,7 +53,7 @@ TaskFormComponent.displayName = 'ToDoTaskFormComponent';
 
 // Uncomment properties you need
 TaskFormComponent.propTypes = {
-  onTaskAdd: React.PropTypes.func.isRequired
+  onTaskAdd: React.PropTypes.func
 };
 // TaskFormComponent.defaultProps = {};
 

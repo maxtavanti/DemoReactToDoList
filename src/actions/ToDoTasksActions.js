@@ -9,7 +9,7 @@ class ToDoTasksActions {
     getToDoTasksOk(successObj) { return successObj; }
     getToDoTasksFail(errorObj) { return errorObj; }
 
-    createToDoTask(taskBody) { return {body: taskBody}; }
+    createToDoTask(taskObj) { return taskObj; }
     createToDoTaskOk(successObj) { return successObj; }
     createToDoTaskFail(errorObj) { return errorObj; }
 
