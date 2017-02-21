@@ -6,6 +6,7 @@ import ToDoTasksStore from './../../stores/ToDoTasksStore';
 import ToDoTasksActions from './../../actions/ToDoTasksActions';
 
 import ListAlt from './../toDo/ListAltComponent';
+import TaskForm from './../toDo/TaskFormComponent';
 
 require('styles/pages/ToDoListAlt.css');
 
@@ -20,6 +21,9 @@ class ToDoListAltComponent extends React.Component {
 
   componentDidMount() {
     ToDoTasksStore.listen(this.onToDoTasksStoreChange);
+
+    /* Load all Tasks */
+    ToDoTasksActions.getToDoTasks();
   }
 
   componentWillUnmount() {
@@ -36,13 +40,18 @@ class ToDoListAltComponent extends React.Component {
       <div className="todolistalt-component">
         <Grid>
           <Row>
+            <h1>Altjs ToDoList!!!</h1>
+            <h2>There are {this.state.tasks.length} in array!</h2>  
+          </Row>
+          <Row>
             <Col xs={12}>
-              <h1>Altjs ToDoList!!!</h1>
-              <h2>There are {this.state.tasks.length} in array!</h2>
-              <Button onClick={ToDoTasksActions.getToDoTasks}>Load Tasks</Button>
-
+              <TaskForm onTaskAdd={ToDoTasksActions.createToDoTask} />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              {/*<Button onClick={ToDoTasksActions.getToDoTasks}>Load Tasks</Button>*/}
               <ListAlt toDoTasks={this.state.tasks} />
-
             </Col>
           </Row>
         </Grid>

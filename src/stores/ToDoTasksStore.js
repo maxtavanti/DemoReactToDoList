@@ -44,6 +44,15 @@ export class ToDoTasksStore {
   }
   handleGetToDoTasksFail(error) { console.log(error); }
 
+  handleCreateToDoTask(taskObj) { 
+    console.log(taskObj);
+    this.getInstance().createToDoTask(taskObj); 
+  }
+  handleCreateToDoTaskOk(response) {
+    ToDoTaskActions.getToDoTasks.defer();
+  }
+  handleCreateToDoTaskFail(error) { console.log(error); }
+
 }
 
 export default alt.createStore(ToDoTasksStore, 'ToDoTasksStore');

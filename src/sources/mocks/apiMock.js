@@ -21,7 +21,7 @@ mock.onGet(`/to_do_tasks`).reply(200, {
 });
 
 mock.onPost(`/to_do_tasks`).reply((config) => {
-  console.log(config);
+  //console.log(config);
 
   let data = JSON.parse(config.data);
 
